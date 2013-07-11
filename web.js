@@ -6,7 +6,8 @@ var fs = require('fs');
 app.get('/', function(request, response) {
     fs.readFile('index.html', function (err, data) {
         if (err) throw err;
-        response.write(data);
+        len = data.length
+        response.write(data.toString('utf8',0,len));
     });
 });
 
