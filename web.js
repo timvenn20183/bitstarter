@@ -8,6 +8,7 @@ app.get('/', function(request, response) {
         if (err) throw err;
         len = data.length
         response.write(data.toString('utf8',0,len));
+        response.end();
     });
 });
 
